@@ -1,0 +1,64 @@
+<div class="sidebar text-white p-3 shadow">
+
+    <h4 class="text-center mb-4">
+        📚 Library
+    </h4>
+
+    <div class="list-group list-group-flush">
+
+        <a href="{{ url_for('main.dashboard') }}"
+           class="list-group-item list-group-item-action border-secondary
+           {% if request.endpoint == 'main.dashboard' %}active{% endif %}">
+            🏠 Dashboard
+        </a>
+
+        <a href="{{ url_for('books.index') }}"
+           class="list-group-item list-group-item-action border-secondary
+           {% if request.blueprint == 'books' %}active{% endif %}">
+            📚 Books
+        </a>
+
+        <a href="{{ url_for('students.index') }}"
+           class="list-group-item list-group-item-action border-secondary
+           {% if request.blueprint == 'students' %}active{% endif %}">
+            👨‍🎓 Students
+        </a>
+
+        <a href="{{ url_for('categories.index') }}"
+           class="list-group-item list-group-item-action border-secondary
+           {% if request.blueprint == 'categories' %}active{% endif %}">
+            🏷 Categories
+        </a>
+
+        <a href="{{ url_for('transactions.index') }}"
+           class="list-group-item list-group-item-action border-secondary
+           {% if request.blueprint == 'transactions' %}active{% endif %}">
+            📖 Transactions
+        </a>
+
+        <a href="{{ url_for('users.index') }}"
+           class="list-group-item list-group-item-action border-secondary
+           {% if request.blueprint == 'users' %}active{% endif %}">
+            👥 Users
+        </a>
+
+        <a href="{{ url_for('reports.index') }}"
+           class="list-group-item list-group-item-action border-secondary
+           {% if request.blueprint == 'reports' %}active{% endif %}">
+            📊 Reports
+        </a>
+
+        <a href="{{ url_for('settings.index') }}"
+           class="list-group-item list-group-item-action border-secondary
+           {% if request.blueprint == 'settings' %}active{% endif %}">
+            ⚙ System Settings
+        </a>
+
+        <a href="{{ url_for('auth.logout') }}"
+           class="list-group-item list-group-item-action bg-danger text-white mt-4">
+            🚪 Logout
+        </a>
+
+    </div>
+
+</div>

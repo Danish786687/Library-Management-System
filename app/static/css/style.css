@@ -1,0 +1,581 @@
+body{
+    background:#f4f6f9;
+}
+
+.sidebar{
+    min-height:100vh;
+    background:#212529;
+}
+
+.sidebar .list-group-item{
+    background:#212529;
+    color:white;
+    border:none;
+    padding:15px 20px;
+    transition:.3s;
+}
+
+.sidebar .list-group-item:hover{
+    background:#0d6efd;
+    color:white;
+    padding-left:28px;
+}
+
+.dashboard-card{
+    transition:.3s;
+    border-radius:12px;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+/* ==================================================
+   DARK MODE
+================================================== */
+
+body.bg-dark{
+    background:#121212 !important;
+    color:#f8f9fa !important;
+}
+
+/* Main Content */
+body.bg-dark .container,
+body.bg-dark .container-fluid,
+body.bg-dark .row,
+body.bg-dark .col,
+body.bg-dark .col-md-10{
+    background:transparent !important;
+}
+
+/* Cards */
+body.bg-dark .card{
+    background:#1e1e1e !important;
+    color:#ffffff !important;
+    border:1px solid #444 !important;
+}
+
+body.bg-dark .card-header{
+    background:#2b2b2b !important;
+    color:white !important;
+}
+
+/* Tables */
+body.bg-dark table{
+    background:#1e1e1e !important;
+    color:white !important;
+}
+
+body.bg-dark .table{
+    color:white !important;
+}
+
+body.bg-dark .table thead,
+body.bg-dark .table-dark,
+body.bg-dark .table-light{
+    background:#2c2c2c !important;
+    color:white !important;
+}
+
+body.bg-dark .table th,
+body.bg-dark .table td{
+    background:#1e1e1e !important;
+    color:white !important;
+    border-color:#444 !important;
+}
+
+body.bg-dark .table-hover tbody tr:hover{
+    background:#2f2f2f !important;
+}
+
+/* Forms */
+body.bg-dark .form-control,
+body.bg-dark .form-select{
+    background:#2b2b2b !important;
+    color:white !important;
+    border:1px solid #555 !important;
+}
+
+body.bg-dark .form-control:focus,
+body.bg-dark .form-select:focus{
+    background:#333 !important;
+    color:white !important;
+    border-color:#0d6efd !important;
+    box-shadow:none;
+}
+
+/* Placeholder */
+body.bg-dark ::placeholder{
+    color:#bbbbbb !important;
+    opacity:1;
+}
+
+/* Search box text */
+body.bg-dark input[type="search"],
+body.bg-dark input[type="text"]{
+    background:#2b2b2b !important;
+    color:white !important;
+}
+
+/* Labels */
+body.bg-dark label{
+    color:white !important;
+}
+
+/* Alerts */
+body.bg-dark .alert{
+    color:white;
+}
+
+/* List Groups */
+body.bg-dark .list-group-item{
+    background:#1f1f1f !important;
+    color:white !important;
+    border-color:#444 !important;
+}
+
+/* Dropdown */
+body.bg-dark .dropdown-menu{
+    background:#2b2b2b;
+}
+
+body.bg-dark .dropdown-item{
+    color:white;
+}
+
+body.bg-dark .dropdown-item:hover{
+    background:#444;
+}
+
+/* Footer */
+body.bg-dark footer{
+    background:#1a1a1a;
+    color:white;
+}
+
+/* Navbar */
+body.bg-dark .navbar{
+    border-bottom:1px solid #444;
+}
+
+/* Sidebar */
+body.bg-dark .sidebar{
+    background:#1b1b1b !important;
+}
+
+/* Buttons */
+body.bg-dark .btn-outline-dark{
+    color:white;
+    border-color:white;
+}
+
+body.bg-dark .btn-outline-dark:hover{
+    background:white;
+    color:black;
+}
+
+/* Links */
+body.bg-dark a{
+    color:#8dcfff;
+}
+
+body.bg-dark a:hover{
+    color:#5db4ff;
+}
+
+/* Pagination */
+body.bg-dark .page-link{
+    background:#2b2b2b;
+    color:white;
+    border-color:#444;
+}
+
+body.bg-dark .page-link:hover{
+    background:#3a3a3a;
+}
+/* ===========================================
+   PROFESSIONAL DASHBOARD CARDS
+=========================================== */
+
+.card{
+    border-radius:16px !important;
+    transition:all .3s ease;
+    overflow:hidden;
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25) !important;
+
+}
+
+/* Dashboard Stat Cards */
+
+.card h1{
+
+    font-size:46px;
+
+}
+
+.card h2{
+
+    font-weight:700;
+
+}
+
+.card h5{
+
+    font-weight:600;
+
+    opacity:.9;
+
+}
+
+/* Dashboard Row */
+
+.row.g-4 .card{
+
+    min-height:180px;
+
+}
+
+/* Nice shadows */
+
+.bg-primary{
+
+    box-shadow:0 8px 20px rgba(13,110,253,.35);
+
+}
+
+.bg-success{
+
+    box-shadow:0 8px 20px rgba(25,135,84,.35);
+
+}
+
+.bg-danger{
+
+    box-shadow:0 8px 20px rgba(220,53,69,.35);
+
+}
+
+.bg-warning{
+
+    box-shadow:0 8px 20px rgba(255,193,7,.35);
+
+}
+
+.bg-info{
+
+    box-shadow:0 8px 20px rgba(13,202,240,.35);
+
+}
+
+.bg-secondary{
+
+    box-shadow:0 8px 20px rgba(108,117,125,.35);
+
+}
+/* ===================================
+   BUTTONS
+=================================== */
+
+.btn{
+
+    border-radius:10px;
+
+    transition:.25s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-2px);
+
+}
+/* ===================================
+   TABLES
+=================================== */
+
+.table{
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+}
+
+.table tbody tr{
+
+    transition:.2s;
+
+}
+
+.table tbody tr:hover{
+
+    transform:scale(1.005);
+
+}
+/* ===================================
+   INPUTS
+=================================== */
+
+.form-control,
+.form-select{
+
+    border-radius:10px;
+
+    padding:10px 14px;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    transform:scale(1.01);
+
+}
+.sidebar{
+
+    transition:.3s;
+
+}
+
+.sidebar .list-group-item{
+
+    border-radius:8px;
+
+    margin-bottom:6px;
+
+}
+
+.sidebar .list-group-item:hover{
+
+    padding-left:22px;
+
+}
+/* ===================================
+   ACTION BUTTONS
+=================================== */
+
+.action-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+.action-buttons .btn{
+
+    min-width:95px;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+}
+
+.action-buttons .btn-warning{
+
+    color:#111 !important;
+
+}
+
+.action-buttons .btn-danger{
+
+    color:white !important;
+
+}
+/* ==========================
+   Sidebar
+========================== */
+
+.sidebar .list-group-item{
+    background:#212529;
+    color:white;
+    border:none;
+    margin-bottom:6px;
+    border-radius:10px;
+    transition:all .25s ease;
+}
+
+.sidebar .list-group-item:hover{
+    background:#0d6efd;
+    color:white;
+    transform:translateX(6px);
+}
+
+.sidebar .list-group-item.active{
+    background:#0d6efd;
+    color:white;
+    font-weight:600;
+    box-shadow:0 0 15px rgba(13,110,253,.35);
+}
+/* =========================================
+   Professional Cards
+========================================= */
+
+.card{
+    border:none;
+    border-radius:15px;
+    transition:all .3s ease;
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+
+.card-header{
+    font-weight:600;
+    letter-spacing:.4px;
+}
+
+
+/* =========================================
+   Tables
+========================================= */
+
+.table{
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.table thead th{
+    border:none;
+    font-weight:600;
+}
+
+.table tbody tr{
+    transition:.25s;
+}
+
+.table tbody tr:hover{
+    background:rgba(13,110,253,.08);
+}
+
+
+/* =========================================
+   Buttons
+========================================= */
+
+.btn{
+    border-radius:10px;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+
+/* =========================================
+   Forms
+========================================= */
+
+.form-control,
+.form-select{
+
+    border-radius:10px;
+
+    transition:.25s;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    box-shadow:0 0 0 .2rem rgba(13,110,253,.2);
+
+}
+
+
+/* =========================================
+   Dashboard Cards
+========================================= */
+
+.card h1{
+    font-size:40px;
+}
+
+.card h2{
+    font-weight:bold;
+}
+/* =========================================
+   Responsive Sidebar
+========================================= */
+
+.offcanvas{
+    width:260px;
+}
+
+.offcanvas-body{
+    padding:0;
+}
+
+@media (max-width:768px){
+
+    .sidebar{
+
+        min-height:100vh;
+
+    }
+
+    .container-fluid{
+
+        padding-left:0;
+
+        padding-right:0;
+
+    }
+
+    .card{
+
+        margin-bottom:15px;
+
+    }
+
+}
+/* =========================================
+   Page Loader
+========================================= */
+
+#loader{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+    transition:opacity .4s ease;
+
+}
+
+#loader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}

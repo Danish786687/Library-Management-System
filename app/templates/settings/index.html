@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}
+Settings
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+        <div class="card shadow">
+
+            <div class="card-header bg-dark text-white">
+
+                <h3 class="mb-0">
+                    ⚙️ System Settings
+                </h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <form method="POST">
+
+                    {{ form.hidden_tag() }}
+
+                    <div class="mb-3">
+
+                        {{ form.library_name.label(class="form-label") }}
+
+                        {{ form.library_name(class="form-control") }}
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            {{ form.default_due_days.label(class="form-label") }}
+
+                            {{ form.default_due_days(class="form-control") }}
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            {{ form.fine_per_day.label(class="form-label") }}
+
+                            {{ form.fine_per_day(class="form-control") }}
+
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        {{ form.low_stock_threshold.label(class="form-label") }}
+
+                        {{ form.low_stock_threshold(class="form-control") }}
+
+                    </div>
+
+                    <hr>
+
+                    <div class="form-check form-switch mb-3">
+
+                        {{ form.allow_manual_due_date(class="form-check-input") }}
+
+                        {{ form.allow_manual_due_date.label(class="form-check-label") }}
+
+                    </div>
+
+                    <div class="form-check form-switch mb-3">
+
+                        {{ form.auto_create_category(class="form-check-input") }}
+
+                        {{ form.auto_create_category.label(class="form-check-label") }}
+
+                    </div>
+
+                    <div class="form-check form-switch mb-4">
+
+                        {{ form.dark_mode(class="form-check-input") }}
+
+                        {{ form.dark_mode.label(class="form-check-label") }}
+
+                    </div>
+
+                    {{ form.submit(class="btn btn-primary") }}
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

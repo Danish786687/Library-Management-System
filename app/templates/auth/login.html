@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Library Management System</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/login.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="row justify-content-center align-items-center"
+         style="min-height:100vh;">
+
+        <div class="col-lg-5 col-md-7">
+
+            <div class="card login-card shadow-lg p-4">
+
+                <div class="text-center mb-4">
+
+                    <div class="library-logo">
+
+                        📚
+
+                    </div>
+
+                    <h2 class="login-title">
+
+                        Library Management System
+
+                    </h2>
+
+                    <p>
+
+                        Administrator Login
+
+                    </p>
+
+                </div>
+
+                <form method="POST">
+
+                    {{ form.hidden_tag() }}
+
+                    <div class="mb-3">
+
+                        {{ form.email.label(class="form-label") }}
+
+                        {{ form.email(class="form-control") }}
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        {{ form.password.label(class="form-label") }}
+
+                        <div class="input-group">
+
+                            {{ form.password(
+                                class="form-control",
+                                id="password"
+                            ) }}
+
+                            <button
+                                class="btn btn-light"
+                                type="button"
+                                onclick="togglePassword()">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-check mb-3">
+
+                        {{ form.remember(
+                            class="form-check-input"
+                        ) }}
+
+                        {{ form.remember.label(
+                            class="form-check-label"
+                        ) }}
+
+                    </div>
+
+                    {{ form.submit(
+                        class="btn btn-primary w-100"
+                    ) }}
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function togglePassword(){
+
+    let field = document.getElementById("password");
+
+    if(field.type==="password"){
+
+        field.type="text";
+
+    }else{
+
+        field.type="password";
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>

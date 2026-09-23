@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Category
+{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">✏ Edit Category</h2>
+
+<form method="POST">
+
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+
+        {{ form.name.label(class="form-label") }}
+
+        {{ form.name(class="form-control") }}
+
+    </div>
+
+    {{ form.submit(class="btn btn-success") }}
+
+    <a href="{{ url_for('categories.index') }}"
+       class="btn btn-secondary">
+        Cancel
+    </a>
+
+</form>
+
+{% endblock %}

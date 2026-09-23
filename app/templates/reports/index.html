@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}
+Reports
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h2>
+            📄 Reports Center
+        </h2>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <h1>📚</h1>
+
+                    <h4>Books Report</h4>
+
+                    <p class="text-muted">
+
+                        Export all books.
+
+                    </p>
+
+                    <div class="d-grid gap-2">
+
+                        <a
+                            href="{{ url_for('reports.books_pdf') }}"
+                            class="btn btn-primary">
+                    
+                            📄 Download PDF
+                    
+                        </a>
+                    
+                        <a
+                            href="{{ url_for('reports.books_excel') }}"
+                            class="btn btn-success">
+                    
+                            📊 Export Excel
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <h1>👨‍🎓</h1>
+
+                    <h4>Students Report</h4>
+
+                    <p class="text-muted">
+
+                        Export all students.
+
+                    </p>
+
+                    <div class="d-grid gap-2">
+
+                        <a
+                            href="{{ url_for('reports.students_pdf') }}"
+                            class="btn btn-primary">
+                    
+                            📄 Download PDF
+                    
+                        </a>
+
+                        <a
+                            href="{{ url_for('reports.students_excel') }}"
+                            class="btn btn-success">
+                    
+                            📊 Export Excel
+                    
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <h1>📖</h1>
+
+                    <h4>Transactions Report</h4>
+
+                    <p class="text-muted">
+
+                        Export issue/return history.
+
+                    </p>
+
+                    <div class="d-grid gap-2">
+
+                        <a
+                            href="{{ url_for('reports.transactions_pdf') }}"
+                            class="btn btn-primary">
+
+                            📄 Download PDF
+
+                        </a>
+
+                        <a
+                            href="{{ url_for('reports.transactions_excel') }}"
+                            class="btn btn-success">
+
+                            📊 Export Excel
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

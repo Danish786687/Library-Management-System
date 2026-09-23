@@ -1,0 +1,372 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div>
+        <h2>
+            <i class="bi bi-speedometer2 me-2"></i>
+            Library Dashboard
+        </h2>
+
+        <p class="text-muted mb-0">
+            Welcome,
+            <strong>{{ current_user.name }}</strong>
+        </p>
+    </div>
+
+</div>
+
+<!-- ========================= -->
+<!-- Statistics Cards -->
+<!-- ========================= -->
+
+<div class="row g-4">
+
+    <div class="col-md-3">
+
+        <div class="card shadow border-0 bg-primary text-white h-100">
+
+            <div class="card-body text-center">
+
+                <h1>
+                    <i class="bi bi-book-half"></i>
+                </h1>
+
+                <h5>Total Books</h5>
+
+                <h2>{{ total_books }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card shadow border-0 bg-success text-white h-100">
+
+            <div class="card-body text-center">
+
+                <h1>
+                    <i class="bi bi-people-fill"></i>
+                </h1>
+
+                <h5>Students</h5>
+
+                <h2>{{ total_students }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card shadow border-0 bg-warning text-dark h-100">
+
+            <div class="card-body text-center">
+
+                <h1>
+                    <i class="bi bi-folder-fill"></i>
+                </h1>
+
+                <h5>Categories</h5>
+
+                <h2>{{ total_categories }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card shadow border-0 bg-info text-white h-100">
+
+            <div class="card-body text-center">
+
+                <h1>
+                    <i class="bi bi-journal-check"></i>
+                </h1>
+
+                <h5>Issued Books</h5>
+
+                <h2>{{ books_issued }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row g-4 mt-1">
+
+    <div class="col-md-3">
+
+        <div class="card shadow border-0 bg-secondary text-white h-100">
+
+            <div class="card-body text-center">
+
+                <h1>
+                    <i class="bi bi-check-circle-fill"></i>
+                </h1>
+
+                <h5>Returned Books</h5>
+
+                <h2>{{ books_returned }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card shadow border-0 bg-danger text-white h-100">
+
+            <div class="card-body text-center">
+
+                <h1>
+                    <i class="bi bi-clock-history"></i>
+                </h1>
+
+                <h5>Overdue Books</h5>
+
+                <h2>{{ overdue_books }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card shadow border-0 bg-dark text-white h-100">
+
+            <div class="card-body text-center">
+
+                <h1>
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                </h1>
+
+                <h5>Low Stock</h5>
+
+                <h2>{{ low_stock_books }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card shadow border-0 bg-success text-white h-100">
+
+            <div class="card-body text-center">
+
+                <h1>
+                    <i class="bi bi-cash-stack"></i>
+                </h1>
+
+                <h5>Total Fine</h5>
+
+                <h2>₹{{ "%.2f"|format(total_fine) }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================= -->
+<!-- System Overview -->
+<!-- ========================= -->
+
+<div class="card shadow mt-5">
+
+    <div class="card-header bg-dark text-white">
+
+        <i class="bi bi-clipboard-data-fill me-2"></i>
+
+        System Overview
+
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-hover align-middle">
+
+            <thead>
+
+                <tr>
+
+                    <th>Information</th>
+
+                    <th>Value</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Total Books</td>
+                    <td>{{ total_books }}</td>
+                </tr>
+
+                <tr>
+                    <td>Total Students</td>
+                    <td>{{ total_students }}</td>
+                </tr>
+
+                <tr>
+                    <td>Total Categories</td>
+                    <td>{{ total_categories }}</td>
+                </tr>
+
+                <tr>
+                    <td>Books Issued</td>
+                    <td>{{ books_issued }}</td>
+                </tr>
+
+                <tr>
+                    <td>Books Returned</td>
+                    <td>{{ books_returned }}</td>
+                </tr>
+
+                <tr>
+                    <td>Overdue Books</td>
+                    <td class="text-danger fw-bold">
+                        {{ overdue_books }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Low Stock Books</td>
+                    <td class="text-warning fw-bold">
+                        {{ low_stock_books }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Total Fine Collected</td>
+                    <td class="text-success fw-bold">
+                        ₹{{ "%.2f"|format(total_fine) }}
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<!-- Dashboard Data -->
+
+<div
+    id="dashboard-data"
+    data-total-books="{{ total_books }}"
+    data-issued-books="{{ books_issued }}"
+    data-returned-books="{{ books_returned }}"
+    data-category-labels='{{ category_labels|tojson }}'
+    data-category-counts='{{ category_counts|tojson }}'>
+</div>
+
+<!-- ========================= -->
+<!-- Charts -->
+<!-- ========================= -->
+
+<div class="row mt-5">
+
+    <div class="col-lg-6 mb-4">
+
+        <div class="card shadow">
+
+            <div class="card-header bg-primary text-white">
+
+                <i class="bi bi-pie-chart-fill me-2"></i>
+
+                Books Overview
+
+            </div>
+
+            <div class="card-body">
+
+                <canvas id="booksChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-6 mb-4">
+
+        <div class="card shadow">
+
+            <div class="card-header bg-success text-white">
+
+                <i class="bi bi-bar-chart-fill me-2"></i>
+
+                Issue vs Return
+
+            </div>
+
+            <div class="card-body">
+
+                <canvas id="transactionChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-lg-6">
+
+        <div class="card shadow">
+
+            <div class="card-header bg-warning text-dark">
+
+                <i class="bi bi-diagram-3-fill me-2"></i>
+
+                Books by Category
+
+            </div>
+
+            <div class="card-body">
+
+                <canvas id="categoryChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

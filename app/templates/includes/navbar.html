@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg shadow
+{% if setting.dark_mode %}
+navbar-dark bg-dark
+{% else %}
+navbar-light bg-light
+{% endif %}
+">
+
+    <div class="container-fluid px-4">
+
+        <a class="navbar-brand fw-bold"
+           href="{{ url_for('main.dashboard') }}">
+
+            📚 {{ setting.library_name }}
+
+        </a>
+
+        {% if current_user.is_authenticated %}
+
+        <div class="d-flex align-items-center">
+
+            <span
+            class="{% if setting.dark_mode %}text-white{% else %}text-dark{% endif %} me-3">
+
+                👤 {{ current_user.name }}
+
+            </span>
+
+            <a href="{{ url_for('auth.logout') }}"
+
+               class="btn {% if setting.dark_mode %}
+               btn-outline-light
+               {% else %}
+               btn-outline-dark
+               {% endif %} btn-sm">
+
+                Logout
+
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</nav>

@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}
+Transactions
+{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <h2>📖 Transactions</h2>
+
+    <a href="{{ url_for('transactions.issue_book') }}"
+       class="btn btn-primary">
+        + Issue Book
+    </a>
+
+</div>
+
+<table class="table table-bordered table-hover align-middle shadow">
+
+    <thead class="table-dark">
+
+        <tr>
+            <th>ID</th>
+            <th>Student</th>
+            <th>Book</th>
+            <th>Issue Date</th>
+            <th>Due Date</th>
+            <th>Return Date</th>
+            <th>Status</th>
+            <th>Fine</th>
+            <th>Action</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for transaction in transactions %}
+
+        <tr>
+
+            <td>{{ transaction.id }}</td>
+
+            <td>{{ transaction.student.name }}</td>
+
+            <td>{{ transaction.book.title }}</td>
+
+            <td>{{ transaction.issue_date.strftime("%d-%m-%Y") }}</td>
+
+            <td>{{ transaction.due_date.strftime("%d-%m-%Y") }}</td>
+
+            <td>
+
+                {% if transaction.return_date %}
+                    {{ transaction.return_date.strftime("%d-%m-%Y") }}
+                {% else %}
+                    -
+                {% endif %}
+
+            </td>
+
+            <td>
+
+                {% if transaction.status == "Returned" %}
+
+                    <span class="badge bg-success">
+                        Returned
+                    </span>
+
+                {% elif transaction.overdue %}
+
+                    <span class="badge bg-danger">
+                        Overdue
+                    </span>
+
+                {% else %}
+
+                    <span class="badge bg-warning text-dark">
+                        Issued
+                    </span>
+
+                {% endif %}
+
+            </td>
+
+            <td>
+
+                {% if transaction.status == "Returned" %}
+
+                    <span class="fw-bold text-success">
+                        ₹{{ "%.2f"|format(transaction.fine) }}
+                    </span>
+
+                {% elif transaction.overdue %}
+
+                    <span class="fw-bold text-danger">
+                        ₹{{ "%.2f"|format(transaction.current_fine) }}
+                    </span>
+
+                {% else %}
+
+                    ₹0.00
+
+                {% endif %}
+
+            </td>
+
+            <td>
+
+                {% if transaction.status == "Issued" %}
+
+                    <a href="{{ url_for('transactions.return_book',
+                                        transaction_id=transaction.id) }}"
+                       class="btn btn-success btn-sm">
+
+                        Return
+
+                    </a>
+
+                {% else %}
+
+                    <button class="btn btn-secondary btn-sm" disabled>
+                        Completed
+                    </button>
+
+                {% endif %}
+
+            </td>
+
+        </tr>
+
+    {% else %}
+
+        <tr>
+
+            <td colspan="9" class="text-center text-muted">
+                No transactions found.
+            </td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}
+Add Book
+{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">➕ Add New Book</h2>
+
+<form method="POST">
+
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+        {{ form.title.label(class="form-label") }}
+        {{ form.title(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.author.label(class="form-label") }}
+        {{ form.author(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.category.label(class="form-label") }}
+        {{ form.category(class="form-select") }}
+        <div class="form-text">
+            Select an existing category.
+        </div>
+    </div>
+
+    <div class="text-center my-2">
+        <strong>OR</strong>
+    </div>
+
+    <div class="mb-3">
+        {{ form.new_category.label(class="form-label") }}
+        {{ form.new_category(class="form-control",
+        placeholder="Example: Artificial Intelligence") }}
+        <div class="form-text">
+            Enter a new category if it doesn't already exist.
+        </div>
+    </div>
+
+    <div class="mb-3">
+        {{ form.quantity.label(class="form-label") }}
+        {{ form.quantity(class="form-control") }}
+    </div>
+
+    {{ form.submit(class="btn btn-primary") }}
+
+</form>
+
+{% endblock %}
