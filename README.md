@@ -47,3 +47,14 @@ LibraryManagementSystem/
 ├── seed.py              # Data Seeding Script
 ├── seed_categories.py   # Category Seeding Script
 └── requirements.txt     # Python Dependencies
+
+## 📸 Screenshots
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8683e101-89ea-43a4-8ff8-bb98cbc00f26" width="45%" />
+  <img src="https://github.com/user-attachments/assets/747b51cf-fb95-44a0-b842-9c9236063a93" width="45%" />
+  <img src="https://github.com/user-attachments/assets/13873f60-55c9-45cd-9af1-8be73f5c6c6f" width="45%" />
+</p>
+
+
+
